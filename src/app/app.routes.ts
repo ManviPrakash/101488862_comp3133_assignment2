@@ -8,15 +8,18 @@ import { ViewEmployeeComponent } from './components/view-employee/view-employee'
 import { EditEmployeeComponent } from './components/edit-employee/edit-employee';
 
 export const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', redirectTo: 'signup', pathMatch: 'full' },
+
+  { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
 
   { path: 'employees', component: EmployeeListComponent },
   { path: 'add', component: AddEmployeeComponent },
+
   {
     path: 'view/:id',
     component: ViewEmployeeComponent,
-    data: { renderMode: 'client' } 
+    data: { renderMode: 'client' }
   },
   {
     path: 'edit/:id',
@@ -24,5 +27,5 @@ export const routes: Routes = [
     data: { renderMode: 'client' }
   },
 
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: 'signup' }
 ];
