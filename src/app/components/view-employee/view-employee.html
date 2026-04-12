@@ -1,0 +1,32 @@
+<div class="container">
+
+  <h2>Employee Details</h2>
+
+  <!-- LOADING -->
+  <div *ngIf="loading">
+    <p>Loading employee...</p>
+  </div>
+
+  <!-- DATA -->
+  <div *ngIf="!loading && emp">
+
+    <img *ngIf="emp.employee_photo" [src]="emp.employee_photo" width="120">
+
+    <p><b>Name:</b> {{ emp.first_name }} {{ emp.last_name }}</p>
+    <p><b>Email:</b> {{ emp.email }}</p>
+    <p><b>Department:</b> {{ emp.department }}</p>
+    <p><b>Designation:</b> {{ emp.designation }}</p>
+    <p><b>Gender:</b> {{ emp.gender }}</p>
+    <p><b>Salary:</b> {{ emp.salary }}</p>
+    <p><b>Date Joined:</b> {{ emp.date_of_joining | date }}</p>
+
+    <button (click)="goBack()">← Back</button>
+
+  </div>
+
+  <!-- NO DATA -->
+  <div *ngIf="!loading && !emp">
+    <p>No employee found ❌</p>
+  </div>
+
+</div>

@@ -1,1 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+  
+  body, app-root {
+    position: relative;
+    z-index: 1;
+  }
+
+.header {
+  background-color: #1f5f73;
+  color: #f5c7a9;
+  text-align: center;
+  padding: 12px;
+  font-size: 22px;
+  font-weight: bold;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+  }
+  
+  /* HEADER */
+  header {
+    background-color: #2c6e7f;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  /* CONTAINER */
+  .container {
+    width: 90%;
+    margin: 20px auto;
+  }
+  
+  /* TABLE */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+  }
+  
+  th {
+    background-color: #2c74b3;
+    color: white;
+    padding: 10px;
+  }
+  
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* BUTTONS */
+  button {
+    background-color: #2c6e7f;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #1f4f5a;
+  }
+  
+  input {
+    padding: 6px;
+    margin-right: 5px;
+  }

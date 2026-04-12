@@ -1,0 +1,14 @@
+<div style="padding:20px; max-width:500px; margin:auto;">
+
+  <h2>Edit Employee</h2>
+
+  <input [(ngModel)]="emp.first_name" placeholder="First Name"><br><br>
+  <input [(ngModel)]="emp.last_name" placeholder="Last Name"><br><br>
+  <input [(ngModel)]="emp.email" placeholder="Email"><br><br>
+  <input [(ngModel)]="emp.department" placeholder="Department"><br><br>
+  <input [(ngModel)]="emp.designation" placeholder="Designation"><br><br>
+
+  <button (click)="updateEmployee()">Update</button>
+  <button (click)="router.navigate(['/employees'])">Cancel</button>
+
+</div>

@@ -1,0 +1,48 @@
+<div *ngIf="loading">
+  <p>Loading employees...</p>
+</div>
+
+<div *ngIf="!loading && employees.length === 0">
+  <p>No employees found</p>
+</div>
+
+<table *ngIf="!loading && employees.length > 0">
+<div class="container">
+  <h2>Employee List</h2>
+
+  <button routerLink="/add">Add Employee</button>
+  <input [(ngModel)]="searchText" placeholder="Search by department">
+<button (click)="search()">Search</button>
+<button style="float:right;" (click)="logout()">Logout</button>
+
+  <br><br>
+
+  <table border="1">
+    <tr>
+      <th>Photo</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Department</th>
+      <th>Designation</th>
+      <th>Action</th>
+    </tr>
+  
+    <ng-container *ngFor="let emp of employees">
+      <tr>
+        <td>
+          <img *ngIf="emp.employee_photo" [src]="emp.employee_photo" width="50">
+        </td>
+        <td>{{ emp.first_name }} {{ emp.last_name }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.department }}</td>
+        <td>{{ emp.designation }}</td>
+        <td>
+          <button [routerLink]="['/view', emp._id]">View</button>
+          <button (click)="deleteEmployee(emp._id)">Delete</button>
+          <button [routerLink]="['/edit', emp._id]">Edit</button>
+        </td>
+        
+      </tr>
+    </ng-container>
+  </table>
+

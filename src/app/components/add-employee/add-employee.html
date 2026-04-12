@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="card">
+      <h2>Add Employee</h2>
+  
+      <input [(ngModel)]="emp.first_name" placeholder="First Name">
+      <input [(ngModel)]="emp.last_name" placeholder="Last Name">
+      <input [(ngModel)]="emp.email" placeholder="Email">
+  
+      <select [(ngModel)]="emp.gender">
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+  
+      <input [(ngModel)]="emp.designation" placeholder="Designation">
+      <input [(ngModel)]="emp.salary" type="number" placeholder="Salary">
+      <input [(ngModel)]="emp.department" placeholder="Department">
+  
+      <label>Date of Joining</label>
+      <input [(ngModel)]="emp.date_of_joining" type="date">
+  
+      <!-- IMAGE UPLOAD -->
+      <input type="file" (change)="onFileChange($event)">
+  
+      <button (click)="addEmployee()">Add Employee</button>
+    </div>
+  </div>
