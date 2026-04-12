@@ -13,8 +13,16 @@ export const routes: Routes = [
 
   { path: 'employees', component: EmployeeListComponent },
   { path: 'add', component: AddEmployeeComponent },
-  { path: 'view/:id', component: ViewEmployeeComponent },
-  { path: 'edit/:id', component: EditEmployeeComponent },
+  {
+    path: 'view/:id',
+    component: ViewEmployeeComponent,
+    data: { renderMode: 'client' } 
+  },
+  {
+    path: 'edit/:id',
+    component: EditEmployeeComponent,
+    data: { renderMode: 'client' }
+  },
 
   { path: '**', redirectTo: '' }
 ];
