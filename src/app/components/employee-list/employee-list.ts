@@ -84,9 +84,8 @@ export class EmployeeListComponent implements OnInit {
       (emp.designation && emp.designation.toLowerCase().includes(text))
     );
   }
-
   logout() {
-    localStorage.clear();
-    this.router.navigate(['/']);
+    localStorage.removeItem('token'); 
+    this.router.navigate(['/login']); 
   }
 }
